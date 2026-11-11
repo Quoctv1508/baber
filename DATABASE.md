@@ -647,25 +647,24 @@ ORDER BY doanh_thu DESC;
 
 ## 8. Cấu hình Spring liên quan
 
-```yaml
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/barber_booking?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Ho_Chi_Minh
-    username: root
-    password: ${DB_PASSWORD}
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    open-in-view: false
-    properties:
-      hibernate.jdbc.time_zone: Asia/Ho_Chi_Minh
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
-  jackson:
-    time-zone: Asia/Ho_Chi_Minh
-    serialization:
-      write-dates-as-timestamps: false
+```Properties
+# Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/barber_booking?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Ho_Chi_Minh
+spring.datasource.username=root
+spring.datasource.password=${DB_PASSWORD}
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.open-in-view=false
+spring.jpa.properties.hibernate.jdbc.time_zone=Asia/Ho_Chi_Minh
+
+# Flyway Configuration
+spring.flyway.enabled=true
+spring.flyway.locations=classpath:db/migration
+
+# Jackson Configuration
+spring.jackson.time-zone=Asia/Ho_Chi_Minh
+spring.jackson.serialization.write-dates-as-timestamps=false
 ```
 
 ---
